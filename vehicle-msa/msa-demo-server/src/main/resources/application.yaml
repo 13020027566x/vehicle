@@ -1,0 +1,8 @@
+# Spring 配置项
+spring:
+    application:
+        name: @project.build.finalName@
+
+vehicle:
+    mybatis:
+        enabled: false

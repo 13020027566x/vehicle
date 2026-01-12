@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.finhub.framework.nacos.configuration.NacosAutoloadConfiguration
+org.springframework.context.ApplicationListener=com.finhub.framework.nacos.listener.NacosApplicationListener
+org.springframework.boot.env.EnvironmentPostProcessor=com.finhub.framework.nacos.configuration.NacosEnvironmentPostProcessor

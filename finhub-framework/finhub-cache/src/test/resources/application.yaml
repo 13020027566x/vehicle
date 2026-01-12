@@ -1,0 +1,23 @@
+nacos:
+    # Nacos 配置中心的配置项，对应 NacosConfigProperties 配置类
+    config:
+        server-addr: vehicle-nacos:8848 # Nacos 服务器地址
+        refresh-data-id: ${spring.application.name}
+        data-ids: finhub-framework-test # 使用的 Nacos 配置集的 dataId。
+        group: VEHICLE_GROUP # 使用的 Nacos 配置分组，默认为 DEFAULT_GROUP。
+        namespace: tx-dev # 使用的 Nacos 的命名空间，默认为 null。
+spring:
+    autoconfigure:
+        exclude:
+            -
+                com.finhub.framework.nacos.configuration.NacosAutoloadConfiguration
+            -
+                com.finhub.framework.i18n.configuration.I18nAutoloadConfiguration
+            -
+                com.finhub.framework.core.configuration.CoreAutoloadConfiguration
+            -
+                com.alibaba.boot.nacos.config.autoconfigure.NacosConfigAutoConfiguration
+            -
+                com.finhub.framework.validator.configuration.ValidatorAutoloadConfiguration
+cache:
+    prefix: cacheManagerPrefix

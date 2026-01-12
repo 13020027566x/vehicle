@@ -1,0 +1,8 @@
+# Nacos 配置中心的配置项，对应 NacosConfigProperties 配置类
+nacos:
+    config:
+        bootstrap:
+            enable: true # 是否开启 Nacos 配置预加载功能。默认为 false。
+            log-enable: true # 是否开启 Nacos 支持日志级别的加载时机。默认为 false。
+        type: YAML # 使用的 Nacos 配置集的配置格式。默认为 PROPERTIES。
+        auto-refresh: true # 是否自动刷新，默认为 false。

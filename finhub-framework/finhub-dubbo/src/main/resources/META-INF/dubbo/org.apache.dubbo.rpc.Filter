@@ -1,0 +1,3 @@
+dubboExceptionFilter=com.finhub.framework.dubbo.filter.DubboExceptionFilter
+providerRpcTraceFilter=com.finhub.framework.dubbo.filter.ProviderRpcTraceFilter
+consumerRpcTraceFilter=com.finhub.framework.dubbo.filter.ConsumerRpcTraceFilter

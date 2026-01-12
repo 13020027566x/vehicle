@@ -1,0 +1,62 @@
+version: '3'
+services:
+    vehicle_mysql:
+        image: 'fbt-registry.cn-beijing.cr.aliyuncs.com/dev/vehicle-mysql:1.0.0'
+        container_name: vehicle-mysql
+        environment:
+            - TZ=Asia/Shanghai
+            - LANG=en_US.UTF-8
+        networks:
+            vehicle_network:
+        ports:
+            - '3306:3306'
+        restart: always
+    vehicle_redis:
+        image: 'fbt-registry.cn-beijing.cr.aliyuncs.com/dev/vehicle-redis:1.0.0'
+        container_name: vehicle-redis
+        ports:
+            - '6379:6379'
+        networks:
+            vehicle_network:
+        command: [ 'redis-server', '/etc/redis.conf' ]
+        restart: always
+    vehicle_zookeeper:
+        image: 'fbt-registry.cn-beijing.cr.aliyuncs.com/dev/vehicle-zookeeper:1.0.0'
+        container_name: vehicle-zookeeper
+        ports:
+            - '2181:2181'
+            - '2888:2888'
+            - '3888:3888'
+        networks:
+            vehicle_network:
+        restart: always
+    vehicle_nacos:
+        image: 'fbt-registry.cn-beijing.cr.aliyuncs.com/dev/vehicle-nacos:1.0.0'
+        container_name: vehicle-nacos
+        env_file: # 设置环境变量,相当于docker run命令中的-e
+            - ./nacos/nacos-hostname.env
+        ports:
+            # web 界面访问端口
+            - '8848:8848'
+            # 程序使用 grpc 连接的端口
+            - '9848:9848'
+        networks:
+            vehicle_network:
+        restart: always
+#  vehicle_server:
+#    image: 'fbt-registry.cn-beijing.cr.aliyuncs.com/dev/vehicle-server:1.0.0'
+#    container_name: vehicle-server
+#    environment:
+#      - TZ=Asia/Shanghai
+#      - LANG=en_US.UTF-8
+#    ports:
+#      - '58080:58080'
+#    networks:
+#      vehicle_network:
+#    entrypoint: ['java', '-Dspring.profiles.active=tx-dev', '-Dnacos.config.server-addr=mse-f92e27f2-nacos-ans.mse.aliyuncs.com:8848', '-Dlog.level=debug', '-Dlog.dir=/data/apps/log', '-Dlog.appender=DRFA', '-jar', 'vehicle-server.jar']
+#    restart: always
+
+networks:
+    vehicle_network:
+        external:
+            name: vehicle_network

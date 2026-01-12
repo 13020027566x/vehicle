@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vehicle.dao.fileattach.FileAttachDAO">
+    <resultMap id="FileAttachResultMap" type="com.vehicle.dao.fileattach.po.FileAttachPO">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="table_name" property="tableName" jdbcType="VARCHAR"/>
+        <result column="record_id" property="recordId" jdbcType="VARCHAR"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="icon_url" property="iconUrl" jdbcType="VARCHAR"/>
+        <result column="preview_url" property="previewUrl" jdbcType="VARCHAR"/>
+        <result column="create_at" property="createAt" jdbcType="BIGINT"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="create_by" property="createBy" jdbcType="VARCHAR"/>
+        <result column="create_name" property="createName" jdbcType="VARCHAR"/>
+        <result column="update_at" property="updateAt" jdbcType="BIGINT"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="update_by" property="updateBy" jdbcType="VARCHAR"/>
+        <result column="update_name" property="updateName" jdbcType="VARCHAR"/>
+        <result column="is_del" property="isDel" jdbcType="TINYINT"/>
+        <result column="is_test" property="isTest" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="select_column_list">SELECT `id`,`table_name`,`record_id`,`name`,`url`,`icon_url`,`preview_url`,`create_at`,`create_by`,`create_name`,`update_at`,`update_by`,`update_name`,`is_del`,`is_test`</sql>
+    <sql id="select_not_del">AND is_del = 0</sql>
+    <sql id="order_by_sql">ORDER BY id DESC</sql>
+    <sql id="insert_into_sql">INSERT INTO `bd_file_attach` (`id`,`table_name`,`record_id`,`name`,`url`,`icon_url`,`preview_url`,`create_at`,`create_by`,`create_name`,`update_at`,`update_by`,`update_name`,`is_del`,`is_test`)</sql>
+    <sql id="delete_from_sql">UPDATE `bd_file_attach`</sql>
+    <sql id="update_table_sql">UPDATE `bd_file_attach`</sql>
+    <sql id="select_count_sql">SELECT COUNT(1) FROM `bd_file_attach`</sql>
+    <sql id="from_sql">FROM `bd_file_attach`</sql>
+    <sql id="insert_table_sql">INSERT INTO `bd_file_attach`</sql>
+    <sql id="limit_1_sql">LIMIT 1</sql>
+
+    <insert id="insertBatchAllColumn" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+        <include refid="insert_into_sql"/>
+        <trim prefix="VALUES" suffixOverrides=",">
+            <if test="list != null">
+                <foreach collection="list" item="item" index="index" separator=",">
+                    <trim prefix="(" suffix=")" suffixOverrides=",">
+                        #{item.id,jdbcType=VARCHAR},
+                        #{item.tableName,jdbcType=VARCHAR},
+                        #{item.recordId,jdbcType=VARCHAR},
+                        #{item.name,jdbcType=VARCHAR},
+                        #{item.url,jdbcType=VARCHAR},
+                        #{item.iconUrl,jdbcType=VARCHAR},
+                        #{item.previewUrl,jdbcType=VARCHAR},
+                        #{item.createAt,jdbcType=BIGINT},
+                        #{item.createBy,jdbcType=VARCHAR},
+                        #{item.createName,jdbcType=VARCHAR},
+                        #{item.updateAt,jdbcType=BIGINT},
+                        #{item.updateBy,jdbcType=VARCHAR},
+                        #{item.updateName,jdbcType=VARCHAR},
+                        #{item.isDel,jdbcType=TINYINT},
+                        #{item.isTest,jdbcType=TINYINT},
+                    </trim>
+                </foreach>
+            </if>
+        </trim>
+    </insert>
+</mapper>

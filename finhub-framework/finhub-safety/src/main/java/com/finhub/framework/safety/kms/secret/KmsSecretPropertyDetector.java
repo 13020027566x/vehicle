@@ -1,0 +1,44 @@
+package com.finhub.framework.safety.kms.secret;
+
+import com.finhub.framework.safety.jayspt.AvailableStringEncryptor;
+
+import com.ulisesbocchio.jasyptspringboot.detector.DefaultPropertyDetector;
+import lombok.extern.slf4j.Slf4j;
+import org.jasypt.encryption.StringEncryptor;
+
+/**
+ * Ali KMS 凭据 加密属性检测器
+ *
+ * @author Mickey
+ * @version 1.0
+ * @since 2023/08/23 16:07
+ */
+@Slf4j
+public class KmsSecretPropertyDetector extends DefaultPropertyDetector implements AvailableStringEncryptor {
+
+    public static final String PREFIX = "KMS-SEC(";
+
+    public static final String SUFFIX = ")";
+
+    private final StringEncryptor stringEncryptor;
+
+    public KmsSecretPropertyDetector(StringEncryptor stringEncryptor) {
+        super(PREFIX, SUFFIX);
+        this.stringEncryptor = stringEncryptor;
+    }
+
+    @Override
+    public boolean isEncrypted(String message) {
+        return super.isEncrypted(message);
+    }
+
+    @Override
+    public String unwrapEncryptedValue(String message) {
+        return super.unwrapEncryptedValue(message);
+    }
+
+    @Override
+    public StringEncryptor availableStringEncryptor() {
+        return stringEncryptor;
+    }
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.vehicle.msa</groupId>
+        <artifactId>vehicle-msa</artifactId>
+        <version>2.1.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>msa-demo-provider</artifactId>
+    <version>${vehicle.version}</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <skip-maven-deploy>true</skip-maven-deploy>
+    </properties>
+
+    <dependencies>
+        <!-- Module依赖 START -->
+        <dependency>
+            <groupId>com.vehicle.msa</groupId>
+            <artifactId>msa-demo-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.finhub.framework</groupId>
+            <artifactId>finhub-dubbo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.finhub.framework</groupId>
+            <artifactId>finhub-nacos</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.finhub.vehicle</groupId>
+            <artifactId>vehicle-scheduler</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.codehaus.groovy</groupId>
+                    <artifactId>groovy</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Module依赖 END -->
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+<!--        &lt;!&ndash; test 2.6.2 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>dubbo</artifactId>-->
+<!--            <version>2.6.2</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>spring</artifactId>-->
+<!--                    <groupId>org.springframework</groupId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>spring-context</artifactId>-->
+<!--                    <groupId>org.springframework</groupId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>spring-expression</artifactId>-->
+<!--                    <groupId>org.springframework</groupId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+    </dependencies>
+
+</project>

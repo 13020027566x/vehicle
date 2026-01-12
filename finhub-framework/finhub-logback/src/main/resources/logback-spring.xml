@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    scan：当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。
+    scanPeriod：设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
+    debug：当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
+-->
+<configuration scan="true" scanPeriod="60 seconds" debug="false" packagingData="false">
+
+    <!-- 引入 Spring Boot 默认的 logback XML 配置文件  -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!-- MDC 方式控制当前线程 Level -->
+    <turboFilter class="com.finhub.framework.logback.filter.DynamicThresholdFilter">
+        <Key>req.level</Key>
+        <DefaultThreshold>DEBUG</DefaultThreshold>
+        <MDCValueLevelPair>
+            <value>OFF</value>
+            <level>OFF</level>
+        </MDCValueLevelPair>
+        <MDCValueLevelPair>
+            <value>FATAL</value>
+            <level>FATAL</level>
+        </MDCValueLevelPair>
+        <MDCValueLevelPair>
+            <value>ERROR</value>
+            <level>ERROR</level>
+        </MDCValueLevelPair>
+        <MDCValueLevelPair>
+            <value>WARN</value>
+            <level>WARN</level>
+        </MDCValueLevelPair>
+        <MDCValueLevelPair>
+            <value>INFO</value>
+            <level>INFO</level>
+        </MDCValueLevelPair>
+        <MDCValueLevelPair>
+            <value>DEBUG</value>
+            <level>DEBUG</level>
+        </MDCValueLevelPair>
+        <MDCValueLevelPair>
+            <value>TRACE</value>
+            <level>TRACE</level>
+        </MDCValueLevelPair>
+        <MDCValueLevelPair>
+            <value>ALL</value>
+            <level>ALL</level>
+        </MDCValueLevelPair>
+    </turboFilter>
+
+    <!--
+        key:标识此<timestamp> 的名字；datePattern：设置将当前时间（解析配置文件的时间）转换为字符串的模式，遵循java.txt.SimpleDateFormat的格式。
+    -->
+    <timestamp key="BOOT_SECOND" datePattern="yyyyMMdd'T'HHmmss"/>
+
+    <!-- 定义日志文件名称 -->
+    <define name="LOG_FILE" class="com.finhub.framework.logback.definer.LogPropertyDefiner">
+        <argument>log.file</argument>
+        <index>0</index>
+    </define>
+    <property name="EFFECTIVE_LOG_FILE" value="${LOG_FILE:-output}"/>
+
+    <!-- 定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径 -->
+    <define name="LOG_DIR" class="com.finhub.framework.logback.definer.LogPropertyDefiner">
+        <argument>log.dir</argument>
+        <index>0</index>
+    </define>
+    <property name="EFFECTIVE_LOG_DIR" value="${LOG_DIR:-.}"/>
+
+    <!-- 定义日志输出 Appender -->
+    <define name="LOG_APPENDER" class="com.finhub.framework.logback.definer.LogPropertyDefiner">
+        <argument>log.appender</argument>
+        <index>0</index>
+    </define>
+    <property name="EFFECTIVE_LOG_APPENDER" value="${LOG_APPENDER:-LOGHUB}"/>
+
+    <!-- 从 Spring Boot 配置文件中，读取 log.level 配置 -->
+    <springProperty name="LOG_LEVEL_PROPERTY" scope="context" source="log.level"/>
+    <!-- 定义日志输出 Appender -->
+    <define name="LOG_LEVEL" class="com.finhub.framework.logback.definer.LogPropertyDefiner">
+        <argument>log.level</argument>
+        <index>0</index>
+        <defaultValue>${LOG_LEVEL_PROPERTY:-INFO}</defaultValue>
+    </define>
+    <property name="EFFECTIVE_LOG_LEVEL" value="${LOG_LEVEL:-INFO}"/>
+
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %X{trace_id} [%X{request_id}] %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    <!-- 控制台输出 -->
+    <appender name="STDOUT_SYNC" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <!--
+            encoder：对日志进行格式化，未配置class属性时，默认配置为PatternLayoutEncoder
+        -->
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout">
+                <Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+            </layout>
+            <!-- 日志编码 -->
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+        </encoder>
+    </appender>
+    <!-- 异步输出 -->
+    <appender name="STDOUT" class="ch.qos.logback.classic.AsyncAppender">
+        <!-- 0-不丢失日志. 默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 -->
+        <discardingThreshold>0</discardingThreshold>
+        <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+        <queueSize>256</queueSize>
+        <!-- 添加附加的 appender,最多只能添加一个 -->
+        <appender-ref ref="STDOUT_SYNC"/>
+    </appender>
+
+    <if condition='p("EFFECTIVE_LOG_APPENDER").equals("DRFA")'>
+        <then>
+            <!-- 从 Spring Boot 配置文件中，读取 spring.application.name 应用名 -->
+            <springProperty name="APPLICATION_NAME" scope="context" source="spring.application.name"/>
+            <property name="EFFECTIVE_APPLICATION_NAME" value="${APPLICATION_NAME:-output}"/>
+
+            <property name="FILE_LOG_PATTERN"
+                      value="%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } %X{trace_id} [%X{request_id}] --- [%15.15t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+
+            <!-- 按照每天生成日志文件 -->
+            <appender name="DRFA_SYNC" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <if condition='p("EFFECTIVE_LOG_FILE").equals("output")'>
+                    <then>
+                        <File>${EFFECTIVE_LOG_DIR}/${EFFECTIVE_APPLICATION_NAME}.log</File>
+                        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                            <!--日志文件输出的文件名-->
+                            <FileNamePattern>${EFFECTIVE_LOG_DIR}/${EFFECTIVE_APPLICATION_NAME}.log.%d.gz
+                            </FileNamePattern>
+                            <maxHistory>${FILE_MAX_HISTORY:-14}</maxHistory>
+                        </rollingPolicy>
+                    </then>
+                    <else>
+                        <File>${EFFECTIVE_LOG_DIR}/${EFFECTIVE_LOG_FILE}.log</File>
+                        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                            <!--日志文件输出的文件名-->
+                            <FileNamePattern>${EFFECTIVE_LOG_DIR}/${EFFECTIVE_LOG_FILE}.log.%d.gz</FileNamePattern>
+                            <maxHistory>${FILE_MAX_HISTORY:-14}</maxHistory>
+                        </rollingPolicy>
+                    </else>
+                </if>
+                <!--
+                    encoder：对日志进行格式化，未配置 class 属性时，默认配置为 PatternLayoutEncoder
+                -->
+                <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+                    <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout">
+                        <Pattern>${FILE_LOG_PATTERN}</Pattern>
+                    </layout>
+                    <!-- 日志编码 -->
+                    <charset class="java.nio.charset.Charset">UTF-8</charset>
+                </encoder>
+            </appender>
+            <!-- 异步输出 -->
+            <appender name="DRFA" class="ch.qos.logback.classic.AsyncAppender">
+                <!-- 0-不丢失日志. 默认的，如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 -->
+                <discardingThreshold>0</discardingThreshold>
+                <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
+                <queueSize>256</queueSize>
+                <!-- 添加附加的 appender，最多只能添加一个 -->
+                <appender-ref ref="DRFA_SYNC"/>
+            </appender>
+        </then>
+    </if>
+
+    <if condition='p("EFFECTIVE_LOG_APPENDER").equals("LOGHUB")'>
+        <then>
+            <!-- Ali yun logback config START -->
+            <springProperty name="REMOTE_TEST" scope="context" source="vehicle.log.test"/>
+            <springProperty name="SPRING_PROFILES_ACTIVE" scope="context" source="spring.profiles.active"/>
+            <springProperty name="REMOTE_ENDPOINT" scope="context" source="vehicle.log.endpoint"/>
+            <springProperty name="REMOTE_ACCESS_KEY_ID" scope="context" source="vehicle.log.accessKeyId"/>
+            <springProperty name="REMOTE_ACCESS_KEY_SECRET" scope="context" source="vehicle.log.accessKeySecret"/>
+            <springProperty name="REMOTE_PROJECT" scope="context" source="vehicle.log.project"/>
+            <springProperty name="REMOTE_LOG_STORE" scope="context" source="spring.application.name"/>
+            <springProperty name="REMOTE_LOG_STORE_TTL" scope="context" source="vehicle.log.remote.logStoreTtl"/>
+            <springProperty name="REMOTE_LOG_STORE_SHARE_COUNT" scope="context" source="vehicle.log.remote.logStoreShareCount"/>
+            <springProperty name="REMOTE_LOG_STORE_MAX_SPLIT_SHARD" scope="context" source="vehicle.log.remote.logStoreMaxSplitShard"/>
+            <springProperty name="REMOTE_TOPIC" scope="context" source="vehicle.log.remote.topic"/>
+            <springProperty name="REMOTE_SOURCE" scope="context" source="vehicle.log.remote.source"/>
+            <springProperty name="REMOTE_TOTAL_SIZE_IN_BYTES" scope="context" source="vehicle.log.remote.totalSizeInBytes"/>
+            <springProperty name="REMOTE_MAX_BLOCK_MS" scope="context" source="vehicle.log.remote.maxBlockMs"/>
+            <springProperty name="REMOTE_IO_THREAD_COUNT" scope="context" source="vehicle.log.remote.ioThreadCount"/>
+            <springProperty name="REMOTE_BATCH_SIZE_THRESHOLD_IN_BYTES" scope="context" source="vehicle.log.remote.batchSizeThresholdInBytes"/>
+            <springProperty name="REMOTE_BATCH_COUNT_THRESHOLD" scope="context" source="vehicle.log.remote.batchCountThreshold"/>
+            <springProperty name="REMOTE_LINGER_MS" scope="context" source="vehicle.log.remote.lingerMs"/>
+            <springProperty name="REMOTE_RETRIES" scope="context" source="vehicle.log.remote.retries"/>
+            <springProperty name="REMOTE_BASE_RETRY_BACKOFF_MS" scope="context" source="vehicle.log.remote.baseRetryBackoffMs"/>
+            <springProperty name="REMOTE_MAX_RETRY_BACKOFF_MS" scope="context" source="vehicle.log.remote.maxRetryBackoffMs"/>
+            <springProperty name="REMOTE_MDC_FIELDS" scope="context" source="vehicle.log.remote.mdcFields"/>
+            <springProperty name="REMOTE_CUSTOM_MDC_FIELDS" scope="context" source="vehicle.log.customMdcFields"/>
+            <springProperty name="REMOTE_CUSTOM_LOGGER_CLASS_LINE" scope="context" source="vehicle.log.loggerClassLine"/>
+
+            <!--为了防止进程退出时，内存中的数据丢失，请加上此选项-->
+            <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
+            <appender name="LOGHUB" class="com.finhub.framework.logback.remote.LoghubAppender">
+                <!--必选项-->
+                <!-- 账号及网络配置 -->
+                <endpoint>${REMOTE_ENDPOINT:- }</endpoint>
+                <accessKeyId>${REMOTE_ACCESS_KEY_ID:- }</accessKeyId>
+                <accessKeySecret>${REMOTE_ACCESS_KEY_SECRET:- }</accessKeySecret>
+
+                <!-- sls 项目配置 -->
+                <project>${REMOTE_PROJECT:- }</project>
+                <logStore>${REMOTE_LOG_STORE}</logStore>
+                <logStoreTtl>${REMOTE_LOG_STORE_TTL}</logStoreTtl>
+                <logStoreShareCount>${REMOTE_LOG_STORE_SHARE_COUNT}</logStoreShareCount>
+                <logStoreMaxSplitShard>${REMOTE_LOG_STORE_MAX_SPLIT_SHARD}</logStoreMaxSplitShard>
+                <!--必选项 (end)-->
+
+                <!-- 可选项 -->
+                <topic>${REMOTE_TOPIC}</topic>
+                <source>${REMOTE_SOURCE}</source>
+
+                <!-- 可选项 详见 '参数说明'-->
+                <totalSizeInBytes>${REMOTE_TOTAL_SIZE_IN_BYTES}</totalSizeInBytes>
+                <maxBlockMs>${REMOTE_MAX_BLOCK_MS}</maxBlockMs>
+                <ioThreadCount>${REMOTE_IO_THREAD_COUNT}</ioThreadCount>
+                <batchSizeThresholdInBytes>${REMOTE_BATCH_SIZE_THRESHOLD_IN_BYTES}</batchSizeThresholdInBytes>
+                <batchCountThreshold>${REMOTE_BATCH_COUNT_THRESHOLD}</batchCountThreshold>
+                <lingerMs>${REMOTE_LINGER_MS}</lingerMs>
+                <retries>${REMOTE_RETRIES}</retries>
+                <baseRetryBackoffMs>${REMOTE_BASE_RETRY_BACKOFF_MS}</baseRetryBackoffMs>
+                <maxRetryBackoffMs>${REMOTE_MAX_RETRY_BACKOFF_MS}</maxRetryBackoffMs>
+
+                <!-- 可选项 通过配置 encoder 的 pattern 自定义 log 的格式 -->
+                <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+                    <layout class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout">
+                        <Pattern>${FILE_LOG_PATTERN}</Pattern>
+                    </layout>
+                    <!-- 日志编码 -->
+                    <charset class="java.nio.charset.Charset">UTF-8</charset>
+                </encoder>
+
+                <!-- 可选项 设置时间格式 -->
+                <timeFormat>yyyy-MM-dd HH:mm:ss.SSS</timeFormat>
+                <!-- 可选项 设置时区 -->
+                <timeZone>Asia/Shanghai</timeZone>
+
+                <mdcFields>${REMOTE_MDC_FIELDS}</mdcFields>
+
+                <!-- 自定义配置 -->
+                <test>${REMOTE_TEST:-false}</test>
+                <profile>${SPRING_PROFILES_ACTIVE:-tx-dev}</profile>
+                <loggerClassLine>${REMOTE_CUSTOM_LOGGER_CLASS_LINE:-false}</loggerClassLine>
+                <customMdcFields>${REMOTE_CUSTOM_MDC_FIELDS:- }</customMdcFields>
+            </appender>
+
+            <!-- 解决debug模式下循环发送的问题 -->
+            <logger name="org.apache.http.impl.conn.Wire" level="WARN" />
+        </then>
+    </if>
+
+    <!-- 在引入的 loggerConfig.xml 中，务必定义 CUSTOM_LOGGER 变量，否则，引入不生效 -->
+    <include optional="true" resource="custom_logback.xml"/>
+
+    <!-- 屏蔽掉一些三方包日志 -->
+    <logger name="com.alibaba.nacos.client.config.impl.ClientWorker" level="ERROR" additivity="false">
+        <appender-ref ref="${EFFECTIVE_LOG_APPENDER}"/>
+    </logger>
+    <logger name="com.finhub.framework.core.listener.CoreApplicationListener" level="ERROR" additivity="false">
+        <appender-ref ref="${EFFECTIVE_LOG_APPENDER}"/>
+    </logger>
+
+    <property name="EFFECTIVE_CUSTOM_LOGGER" value="${CUSTOM_LOGGER:-false}"/>
+
+    <!--
+        name：用来指定受此logger约束的某一个包或者具体的某一个类。
+        level：用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，还有一个特俗值INHERITED或者同义词NULL，代表强制执行上级的级别。如果未设置此属性，那么当前logger将会继承上级的级别。
+        additivity：是否向上级logger传递打印信息。默认是true。
+        <logger>可以包含零个或多个<appender-ref>元素，标识这个appender将会添加到这个logger。
+    -->
+    <if condition='p("EFFECTIVE_CUSTOM_LOGGER").equals("false")'>
+        <then>
+            <logger name="net.sf.ehcache" level="${EFFECTIVE_LOG_LEVEL}" additivity="false">
+                <appender-ref ref="STDOUT"/>
+                <appender-ref ref="${EFFECTIVE_LOG_APPENDER}"/>
+            </logger>
+            <logger name="org.apache" level="${EFFECTIVE_LOG_LEVEL}" additivity="false">
+                <appender-ref ref="STDOUT"/>
+                <appender-ref ref="${EFFECTIVE_LOG_APPENDER}"/>
+            </logger>
+            <logger name="org.springframework" level="${EFFECTIVE_LOG_LEVEL}" additivity="false">
+                <appender-ref ref="STDOUT"/>
+                <appender-ref ref="${EFFECTIVE_LOG_APPENDER}"/>
+            </logger>
+            <logger name="org.hibernate" level="${EFFECTIVE_LOG_LEVEL}" additivity="false">
+                <appender-ref ref="STDOUT"/>
+                <appender-ref ref="${EFFECTIVE_LOG_APPENDER}"/>
+            </logger>
+        </then>
+    </if>
+
+    <!--
+        <root>：也是<logger>元素，但是它是根logger。只有一个level属性，应为已经被命名为"root".
+    -->
+    <root name="ROOT" level="${EFFECTIVE_LOG_LEVEL}">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="${EFFECTIVE_LOG_APPENDER}"/>
+    </root>
+</configuration>

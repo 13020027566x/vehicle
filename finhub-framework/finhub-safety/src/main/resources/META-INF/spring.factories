@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.finhub.framework.safety.configuration.SafetyAutoloadConfiguration
+org.springframework.boot.env.EnvironmentPostProcessor=com.finhub.framework.safety.environment.SafetyEnvironmentPostProcessor

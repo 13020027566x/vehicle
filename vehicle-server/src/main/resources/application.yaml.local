@@ -1,0 +1,81 @@
+# Spring 配置项
+spring:
+    application:
+        name: @project.build.finalName@
+
+jdbc:
+    dsMainM0Driverclass: com.mysql.jdbc.Driver
+    dsMainM0Url: jdbc:mysql://127.0.0.1:3306/vehicle?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8&useSSL=false
+    dsMainM0Username: vehicle
+    dsMainM0Password: 3sbdKJ734d2MYbCX
+    dsMainM0S0Driverclass: com.mysql.jdbc.Driver
+    dsMainM0S0Url: jdbc:mysql://127.0.0.1:3306/vehicle?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8&useSSL=false
+    dsMainM0S0Username: vehicle
+    dsMainM0S0Password: 3sbdKJ734d2MYbCX
+    dsXxxM0Driverclass: com.mysql.jdbc.Driver
+    dsXxxM0Url: jdbc:mysql://127.0.0.1:3306/vehicle?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8&useSSL=false
+    dsXxxM0Username: vehicle
+    dsXxxM0Password: 3sbdKJ734d2MYbCX
+
+redis:
+    mode: STANDALONE
+    ip: 127.0.0.1
+    port: 6379
+    database: 15
+    maxIdle: 1000
+    minIdle: 10
+    maxTotal: 2000
+    maxWaitMillis: 30000
+
+wx:
+    pay:
+        appId: wxc71d7a789a78593c
+        mchId: 1678665482
+        mchKey: e246c6266b016d83e844e626f212c8fb
+        keyPath: classpath:/apiclient_cert.p12
+
+    miniapp:
+        configs:
+            - appid: wxc71d7a789a78593c
+              secret: 62b9e425610fc7ffdc6c82ecc77f1b74
+
+#zookeeper:
+#    url: vehicle-zookeeper:2181
+
+send:
+    reconnect: true
+
+dubbo:
+    application:
+        environment: develop
+        name: ${spring.application.name}
+        version: 1.0.0
+    consumer:
+        check: false
+        retries: 0
+        timeout: 60000
+    metadata-report:
+        address: ${dubbo.registry.address}
+    protocol:
+        name: dubbo
+        port: 20880
+    provider:
+        payload: 18388608
+        retries: 0
+        timeout: 60000
+    registry:
+        address: zookeeper://${zookeeper.url}
+    version: 1.0.0
+
+vehicle:
+    illegalsql:
+        enabled: false
+    nacos:
+        enabled: false
+    adaptive:
+        enabled: false
+
+# Web 配置项，端口默认为 58080，适配前端
+server:
+    address: 0.0.0.0
+    port: 58080

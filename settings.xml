@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <pluginGroups></pluginGroups>
+  <proxies></proxies>
+
+  <!--
+    仓库的优先级：本地仓库 > settings 中的 profile > pom 中的 repository > mirror
+  -->
+  <localRepository>${user.home}/.m2/repository</localRepository>
+
+  <servers>
+    <server>
+      <id>nexus</id>
+      <username>admin</username>
+      <password>Fbt@201603</password>
+    </server>
+    <server>
+      <id>releases</id>
+      <username>admin</username>
+      <password>Fbt@201603</password>
+    </server>
+    <server>
+      <id>snapshots</id>
+      <username>admin</username>
+      <password>Fbt@201603</password>
+    </server>
+  </servers>
+
+  <mirrors>
+      <mirror>
+          <id>aliyun-maven</id>
+          <mirrorOf>central,jcenter</mirrorOf>
+          <name>阿里云公共仓库</name>
+          <url>https://maven.aliyun.com/repository/public</url>
+      </mirror>
+  </mirrors>
+
+  <profiles>
+    <profile>
+      <id>artifactory</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <!-- 使用 aliyun 的 Maven 源，提升下载速度 -->
+        <repository>
+          <id>aliyun-maven</id>
+          <name>aliyun-maven</name>
+          <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+<!--        <repository>-->
+<!--          <id>releases</id>-->
+<!--          <name>libs-release</name>-->
+<!--          <snapshots>-->
+<!--            <enabled>true</enabled>-->
+<!--          </snapshots>-->
+<!--          <url>http://nexus.fenbeijinfu.com:8081/nexus/content/repositories/releases</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--          <id>snapshots</id>-->
+<!--          <name>libs-snapshot</name>-->
+<!--          <snapshots>-->
+<!--            <enabled>true</enabled>-->
+<!--            <updatePolicy>always</updatePolicy>-->
+<!--          </snapshots>-->
+<!--          <url>http://nexus.fenbeijinfu.com:8081/nexus/content/repositories/snapshots</url>-->
+<!--        </repository>-->
+<!--        <repository>-->
+<!--          <id>nexus</id>-->
+<!--          <name>libs-public</name>-->
+<!--          <releases>-->
+<!--            &lt;!&ndash; 默认为 true &ndash;&gt;-->
+<!--            <enabled>true</enabled>-->
+<!--          </releases>-->
+<!--          <snapshots>-->
+<!--            &lt;!&ndash; 默认为 false &ndash;&gt;-->
+<!--            <enabled>true</enabled>-->
+<!--            <updatePolicy>always</updatePolicy>-->
+<!--          </snapshots>-->
+<!--          <url>http://nexus.fenbeijinfu.com:8081/nexus/repository/public</url>-->
+<!--        </repository>-->
+      </repositories>
+    </profile>
+  </profiles>
+
+  <!-- 被上面的 activeByDefault 替代
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+  -->
+</settings>

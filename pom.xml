@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.finhub</groupId>
+        <artifactId>finhub-parent</artifactId>
+        <version>2.1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.finhub.vehicle</groupId>
+    <artifactId>vehicle</artifactId>
+    <version>2.1.1-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <vehicle.version>2.1.1${current.version}</vehicle.version>
+    </properties>
+
+    <modules>
+        <module>finhub-parent</module>
+
+        <module>vehicle-dao</module>
+
+        <module>vehicle-msa</module>
+        <module>vehicle-msa/msa-demo-api</module>
+        <module>vehicle-msa/msa-demo-client</module>
+        <module>vehicle-msa/msa-demo-provider</module>
+        <module>vehicle-msa/msa-demo-server</module>
+
+        <module>vehicle-scheduler</module>
+        <module>vehicle-server</module>
+        <module>vehicle-service</module>
+        <module>vehicle-shiro</module>
+        <module>vehicle-web</module>
+    </modules>
+
+    <dependencies>
+        <!-- Module -->
+        <!-- END -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.27</version>
+        </dependency>
+
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Module -->
+            <dependency>
+                <groupId>com.finhub.vehicle</groupId>
+                <artifactId>vehicle-dao</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vehicle.msa</groupId>
+                <artifactId>vehicle-msa</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vehicle.msa</groupId>
+                <artifactId>msa-demo-api</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vehicle.msa</groupId>
+                <artifactId>msa-demo-client</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vehicle.msa</groupId>
+                <artifactId>msa-demo-provider</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vehicle.msa</groupId>
+                <artifactId>msa-demo-server</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.finhub.vehicle</groupId>
+                <artifactId>vehicle-scheduler</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.finhub.vehicle</groupId>
+                <artifactId>vehicle-server</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.finhub.vehicle</groupId>
+                <artifactId>vehicle-service</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.finhub.vehicle</groupId>
+                <artifactId>vehicle-shiro</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.finhub.vehicle</groupId>
+                <artifactId>vehicle-web</artifactId>
+                <version>${vehicle.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

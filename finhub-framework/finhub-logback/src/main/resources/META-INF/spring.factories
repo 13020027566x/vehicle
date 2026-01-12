@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.finhub.framework.logback.configuration.LogbackAutoloadConfiguration
+org.springframework.context.ApplicationListener=com.finhub.framework.logback.listener.LogYamlApplicationListener

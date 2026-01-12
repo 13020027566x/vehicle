@@ -1,0 +1,25 @@
+vehicle:
+    log:
+        remote:
+            logStoreTtl: 5
+            logStoreShareCount: 1
+            logStoreMaxSplitShard: 16
+            topic: ""
+            source: ""
+            totalSizeInBytes: 104857600
+            maxBlockMs: 60000
+            ioThreadCount: 8
+            batchSizeThresholdInBytes: 524288
+            batchCountThreshold: 512
+            lingerMs: 2000
+            retries: 3
+            baseRetryBackoffMs: 100
+            maxRetryBackoffMs: 100
+            mdcFields: 'from_ip,from_app,from_dept,from_port,from_vehicle,from_lang,
+            to_ip,to_app,to_dept,to_port,to_vehicle,to_lang,
+            remote_method,remote_parameter,remote_attachment,remote_success,remote_result,
+            request_ip,request_uri,request_method,request_body,
+            request_parameter,request_header,request_attribute,
+            response_success,response_status,response_header,response_result,
+            _cost_,trace_id,request_id,_throwable_,lower_trace_id,
+            handle_method,handle_parameter,handle_success,handle_result'

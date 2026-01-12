@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.vehicle.msa</groupId>
+        <artifactId>vehicle-msa</artifactId>
+        <version>2.1.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>msa-demo-server</artifactId>
+    <version>${vehicle.version}</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <skip-maven-deploy>true</skip-maven-deploy>
+        <start-class>com.vehicle.server.BootStrap</start-class>
+    </properties>
+
+    <dependencies>
+        <!-- Module依赖 START -->
+        <dependency>
+            <groupId>com.vehicle.msa</groupId>
+            <artifactId>msa-demo-provider</artifactId>
+        </dependency>
+        <!-- Module依赖 END -->
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

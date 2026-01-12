@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vehicle.dao.roleresource.RoleResourceDAO">
+    <resultMap id="RoleResourceResultMap" type="com.vehicle.dao.roleresource.po.RoleResourcePO">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="role_id" property="roleId" jdbcType="VARCHAR"/>
+        <result column="role_name" property="roleName" jdbcType="VARCHAR"/>
+        <result column="role_code" property="roleCode" jdbcType="VARCHAR"/>
+        <result column="resource_id" property="resourceId" jdbcType="VARCHAR"/>
+        <result column="resource_name" property="resourceName" jdbcType="VARCHAR"/>
+        <result column="resource_code" property="resourceCode" jdbcType="VARCHAR"/>
+        <result column="create_at" property="createAt" jdbcType="BIGINT"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="create_by" property="createBy" jdbcType="VARCHAR"/>
+        <result column="create_name" property="createName" jdbcType="VARCHAR"/>
+        <result column="update_at" property="updateAt" jdbcType="BIGINT"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="update_by" property="updateBy" jdbcType="VARCHAR"/>
+        <result column="update_name" property="updateName" jdbcType="VARCHAR"/>
+        <result column="is_del" property="isDel" jdbcType="TINYINT"/>
+        <result column="is_test" property="isTest" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="select_column_list">SELECT `id`,`role_id`,`role_name`,`role_code`,`resource_id`,`resource_name`,`resource_code`,`create_at`,`create_by`,`create_name`,`update_at`,`update_by`,`update_name`,`is_del`,`is_test`</sql>
+    <sql id="select_not_del">AND is_del = 0</sql>
+    <sql id="order_by_sql">ORDER BY id DESC</sql>
+    <sql id="insert_into_sql">INSERT INTO `su_role_resource` (`id`,`role_id`,`role_name`,`role_code`,`resource_id`,`resource_name`,`resource_code`,`create_at`,`create_by`,`create_name`,`update_at`,`update_by`,`update_name`,`is_del`,`is_test`)</sql>
+    <sql id="delete_from_sql">UPDATE `su_role_resource`</sql>
+    <sql id="update_table_sql">UPDATE `su_role_resource`</sql>
+    <sql id="select_count_sql">SELECT COUNT(1) FROM `su_role_resource`</sql>
+    <sql id="from_sql">FROM `su_role_resource`</sql>
+    <sql id="insert_table_sql">INSERT INTO `su_role_resource`</sql>
+    <sql id="limit_1_sql">LIMIT 1</sql>
+
+    <insert id="insertBatchAllColumn" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+        <include refid="insert_into_sql"/>
+        <trim prefix="VALUES" suffixOverrides=",">
+            <if test="list != null">
+                <foreach collection="list" item="item" index="index" separator=",">
+                    <trim prefix="(" suffix=")" suffixOverrides=",">
+                        #{item.id,jdbcType=VARCHAR},
+                        #{item.roleId,jdbcType=VARCHAR},
+                        #{item.roleName,jdbcType=VARCHAR},
+                        #{item.roleCode,jdbcType=VARCHAR},
+                        #{item.resourceId,jdbcType=VARCHAR},
+                        #{item.resourceName,jdbcType=VARCHAR},
+                        #{item.resourceCode,jdbcType=VARCHAR},
+                        #{item.createAt,jdbcType=BIGINT},
+                        #{item.createBy,jdbcType=VARCHAR},
+                        #{item.createName,jdbcType=VARCHAR},
+                        #{item.updateAt,jdbcType=BIGINT},
+                        #{item.updateBy,jdbcType=VARCHAR},
+                        #{item.updateName,jdbcType=VARCHAR},
+                        #{item.isDel,jdbcType=TINYINT},
+                        #{item.isTest,jdbcType=TINYINT},
+                    </trim>
+                </foreach>
+            </if>
+        </trim>
+    </insert>
+</mapper>

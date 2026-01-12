@@ -1,0 +1,52 @@
+# 使用专业的 .gitignore 模板
+# 方法1：从 gitignore.io 生成
+curl -o .gitignore https://www.toptal.com/developers/gitignore/api/java,maven,windows,intellij+all,visualstudiocode
+
+# 方法2：手动写完整的
+@"
+### Maven ###
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+### Compiled class file ###
+*.class
+
+### Log file ###
+*.log
+
+### Package Files ###
+*.jar
+
+### Intellij Idea ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+### VS Code ###
+.vscode/
+
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Mac OSX ###
+.DS_Store
+
+### 你的错误文件 ###
+y
+y.pub
+"@ | Out-File .gitignore -Encoding utf8 -Force

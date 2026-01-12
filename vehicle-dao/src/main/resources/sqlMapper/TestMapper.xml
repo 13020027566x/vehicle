@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vehicle.dao.test.TestDAO">
+    <resultMap id="TestResultMap" type="com.vehicle.dao.test.po.TestPO">
+        <result column="test_name" property="testName" jdbcType="VARCHAR"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="select_column_list">SELECT `test_name`,`remark`</sql>
+    <sql id="select_not_del">AND is_del = 0</sql>
+    <sql id="order_by_sql">ORDER BY id DESC</sql>
+    <sql id="insert_into_sql">INSERT INTO `bd_test` (`test_name`,`remark`)</sql>
+    <sql id="delete_from_sql">UPDATE `bd_test`</sql>
+    <sql id="update_table_sql">UPDATE `bd_test`</sql>
+    <sql id="select_count_sql">SELECT COUNT(1) FROM `bd_test`</sql>
+    <sql id="from_sql">FROM `bd_test`</sql>
+    <sql id="insert_table_sql">INSERT INTO `bd_test`</sql>
+    <sql id="limit_1_sql">LIMIT 1</sql>
+
+    <insert id="insertBatchAllColumn" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+        <include refid="insert_into_sql"/>
+        <trim prefix="VALUES" suffixOverrides=",">
+            <if test="list != null">
+                <foreach collection="list" item="item" index="index" separator=",">
+                    <trim prefix="(" suffix=")" suffixOverrides=",">
+                        #{item.testName,jdbcType=VARCHAR},
+                        #{item.remark,jdbcType=VARCHAR},
+                    </trim>
+                </foreach>
+            </if>
+        </trim>
+    </insert>
+</mapper>

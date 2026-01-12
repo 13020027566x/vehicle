@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.finhub.vehicle</groupId>
+        <artifactId>vehicle</artifactId>
+        <version>2.1.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>vehicle-service</artifactId>
+    <version>${vehicle.version}</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <skip-maven-deploy>true</skip-maven-deploy>
+    </properties>
+
+    <dependencies>
+        <!-- Module -->
+        <dependency>
+            <groupId>com.finhub.vehicle</groupId>
+            <artifactId>vehicle-dao</artifactId>
+        </dependency>
+        <!-- END -->
+    </dependencies>
+</project>

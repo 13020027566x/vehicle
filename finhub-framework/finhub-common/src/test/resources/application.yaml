@@ -1,0 +1,22 @@
+nacos:
+    # Nacos 配置中心的配置项，对应 NacosConfigProperties 配置类
+    config:
+        server-addr: mse-f92e27f2-nacos-ans.mse.aliyuncs.com:8848 # Nacos 服务器地址
+        refresh-data-id: ${spring.application.name}
+        data-ids: finhub-job # 使用的 Nacos 配置集的 dataId。
+        group: FINHUB_GROUP # 使用的 Nacos 配置分组，默认为 DEFAULT_GROUP。
+        namespace: tx-dev # 使用的 Nacos 的命名空间，默认为 null。
+refresh:
+    config:
+        env-debug-enabled: true
+spring:
+    autoconfigure:
+        exclude:
+            -
+                com.finhub.framework.mybatis.configuration.MyBatisAutoloadConfiguration
+            -
+                com.finhub.framework.i18n.configuration.I18nAutoloadConfiguration
+            -
+                com.finhub.framework.core.configuration.CoreAutoloadConfiguration
+            -
+                com.finhub.framework.validator.configuration.ValidatorAutoloadConfiguration
