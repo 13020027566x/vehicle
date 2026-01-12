@@ -1,0 +1,5 @@
+com\finhub\framework\safety\kms\secret\GovernanceTest.class
+com\finhub\framework\safety\BaseJUnitTester.class
+com\finhub\framework\safety\kms\key\GovernanceTest.class
+com\finhub\framework\safety\kms\secret\OptionTest.class
+com\finhub\framework\safety\kms\key\OptionTest.class

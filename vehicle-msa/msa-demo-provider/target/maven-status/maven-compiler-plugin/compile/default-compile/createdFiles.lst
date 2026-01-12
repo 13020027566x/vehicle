@@ -1,0 +1,8 @@
+com/vehicle/provider/demo/converter/DemoConverter.class
+com/vehicle/provider/demo/dto/DemoDTO.class
+com/vehicle/provider/demo/manager/DemoManager.class
+com/vehicle/provider/demo/domain/DemoDO.class
+com/vehicle/provider/ProviderServer.class
+com/vehicle/provider/demo/impl/DemoServiceImpl.class
+com/vehicle/provider/demo/converter/DemoConverterImpl.class
+com/vehicle/provider/configuration/ProviderConfiguration.class

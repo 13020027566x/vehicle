@@ -1,0 +1,2 @@
+com\finhub\framework\agent\BootAgent.class
+com\finhub\framework\agent\transformer\CustomClassFileTransformer.class

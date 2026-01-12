@@ -1,0 +1,13 @@
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/resource/domain/ResourceDOTest.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/roleresource/domain/RoleResourceDOTest.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/log/domain/LogDOTest.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/BaseJUnitTester.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/test/domain/TestDOTest.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/organization/domain/OrganizationDOTest.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/userrole/domain/UserRoleDOTest.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/user/domain/UserDOTest.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/role/domain/RoleDOTest.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/configuration/ServiceTestConfiguration.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/dictionary/domain/DictionaryDOTest.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/userorg/domain/UserOrgDOTest.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-service/src/test/java/com/vehicle/service/fileattach/domain/FileAttachDOTest.java

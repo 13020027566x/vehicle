@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.finhub.framework.web.configuration.WebAutoloadConfiguration
+org.springframework.boot.env.EnvironmentPostProcessor=com.finhub.framework.web.async.WebAsyncEnvironmentProcessor

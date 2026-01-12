@@ -1,0 +1,341 @@
+{
+  "groups": [
+    {
+      "name": "jdbc",
+      "type": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "jdbc.ds-main-m0-driverclass",
+      "type": "java.lang.String",
+      "description": "基本属性 url、user、password",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-main-m0-initial-size",
+      "type": "java.lang.Integer",
+      "description": "配置初始化大小、最小、最大",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 5
+    },
+    {
+      "name": "jdbc.ds-main-m0-log-abandoned",
+      "type": "java.lang.Boolean",
+      "description": "关闭abanded连接时输出错误日志",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jdbc.ds-main-m0-max-active",
+      "type": "java.lang.Integer",
+      "description": "连接池激活的最大数据库连接总数。设为0表示无限制",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 20
+    },
+    {
+      "name": "jdbc.ds-main-m0-max-pool-prepared-statement-per-connection-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 20
+    },
+    {
+      "name": "jdbc.ds-main-m0-max-wait",
+      "type": "java.lang.Integer",
+      "description": "最大建立连接等待时间，单位为 ms，如果超过此时间将接到异常。设为-1表示无限制",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 60000
+    },
+    {
+      "name": "jdbc.ds-main-m0-min-evictable-idle-time-millis",
+      "type": "java.lang.Integer",
+      "description": "配置连接池中连接可空闲的时间(针对连接池中的连接对象.空闲超过这个时间则断开，直到连接池中的连接数到minIdle为止)，单位是毫秒，建议设置为5分钟",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 300000
+    },
+    {
+      "name": "jdbc.ds-main-m0-password",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-main-m0-pool-prepared-statements",
+      "type": "java.lang.Boolean",
+      "description": "打开PSCache，并且指定每个连接上PSCache的大小(Oracle或mysql5.5及以上使用)",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jdbc.ds-main-m0-remove-abandoned",
+      "type": "java.lang.Boolean",
+      "description": "超过时间限制是否回收",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "jdbc.ds-main-m0-remove-abandoned-timeout",
+      "type": "java.lang.Integer",
+      "description": "超时时间：单位为秒。180 秒=3 分钟",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 180
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-driverclass",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-initial-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 5
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-log-abandoned",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-max-active",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 20
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-max-pool-prepared-statement-per-connection-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 20
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-max-wait",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 60000
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-min-evictable-idle-time-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 300000
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-password",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-pool-prepared-statements",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-remove-abandoned",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-remove-abandoned-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 180
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-test-on-borrow",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-test-on-return",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-test-while-idle",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-time-between-eviction-runs-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 60000
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-url",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-username",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-main-m0-s0-validation-query",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": "SELECT 'x' FROM DUAL"
+    },
+    {
+      "name": "jdbc.ds-main-m0-test-on-borrow",
+      "type": "java.lang.Boolean",
+      "description": "申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能，建议仅在DEV使用",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "jdbc.ds-main-m0-test-on-return",
+      "type": "java.lang.Boolean",
+      "description": "归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能，建议仅在DEV使用",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "jdbc.ds-main-m0-test-while-idle",
+      "type": "java.lang.Boolean",
+      "description": "建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jdbc.ds-main-m0-time-between-eviction-runs-millis",
+      "type": "java.lang.Integer",
+      "description": "配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒，建议设置为1分钟",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 60000
+    },
+    {
+      "name": "jdbc.ds-main-m0-url",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-main-m0-username",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-main-m0-validation-query",
+      "type": "java.lang.String",
+      "description": "用来检测连接是否有效的sql，要求是一个查询语句，常用select 'x'。如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会起作用",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": "SELECT 'x' FROM DUAL"
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-driverclass",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-initial-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 5
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-log-abandoned",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-max-active",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 20
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-max-pool-prepared-statement-per-connection-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 20
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-max-wait",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 60000
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-min-evictable-idle-time-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 300000
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-password",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-pool-prepared-statements",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-remove-abandoned",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-remove-abandoned-timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 180
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-test-on-borrow",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-test-on-return",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-test-while-idle",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-time-between-eviction-runs-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": 60000
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-url",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-username",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties"
+    },
+    {
+      "name": "jdbc.ds-xxx-m0-validation-query",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.mybatis.property.JdbcProperties",
+      "defaultValue": "SELECT 'x' FROM DUAL"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

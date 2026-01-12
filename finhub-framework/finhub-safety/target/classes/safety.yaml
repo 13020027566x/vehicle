@@ -1,0 +1,7 @@
+jasypt:
+    encryptor:
+        property:
+            filter:
+                exclude-names:
+                    - "^jasypt\\.encryptor\\.*"
+                    - "^vehicle\\.safety\\.*"

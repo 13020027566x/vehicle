@@ -1,0 +1,3 @@
+com\finhub\framework\swagger\property\SwaggerProperties.class
+com\finhub\framework\swagger\configuration\SwaggerAutoloadConfiguration.class
+META-INF\spring-configuration-metadata.json

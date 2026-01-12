@@ -1,0 +1,35 @@
+{
+  "groups": [
+    {
+      "name": "zookeeper",
+      "type": "com.finhub.framework.common.property.ZooKeeperProperties",
+      "sourceType": "com.finhub.framework.common.property.ZooKeeperProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "zookeeper.retry",
+      "type": "java.lang.Integer",
+      "description": "重试次数，默认3",
+      "sourceType": "com.finhub.framework.common.property.ZooKeeperProperties",
+      "defaultValue": 3
+    },
+    {
+      "name": "zookeeper.timeout",
+      "type": "java.lang.Integer",
+      "description": "超时时间(毫秒)，默认1000",
+      "sourceType": "com.finhub.framework.common.property.ZooKeeperProperties",
+      "defaultValue": 1000
+    },
+    {
+      "name": "zookeeper.url",
+      "type": "java.lang.String",
+      "description": "连接地址",
+      "sourceType": "com.finhub.framework.common.property.ZooKeeperProperties"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

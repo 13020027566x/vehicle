@@ -1,0 +1,13 @@
+com/vehicle/service/resource/domain/ResourceDOTest.class
+com/vehicle/service/userrole/domain/UserRoleDOTest.class
+com/vehicle/service/fileattach/domain/FileAttachDOTest.class
+com/vehicle/service/roleresource/domain/RoleResourceDOTest.class
+com/vehicle/service/dictionary/domain/DictionaryDOTest.class
+com/vehicle/service/log/domain/LogDOTest.class
+com/vehicle/service/user/domain/UserDOTest.class
+com/vehicle/service/organization/domain/OrganizationDOTest.class
+com/vehicle/service/userorg/domain/UserOrgDOTest.class
+com/vehicle/service/role/domain/RoleDOTest.class
+com/vehicle/service/configuration/ServiceTestConfiguration.class
+com/vehicle/service/BaseJUnitTester.class
+com/vehicle/service/test/domain/TestDOTest.class

@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.finhub.framework.core.configuration.CoreAutoloadConfiguration
+org.springframework.context.ApplicationListener=\
+com.finhub.framework.core.listener.CoreApplicationListener,\
+com.finhub.framework.core.listener.ActuatorApplicationListener

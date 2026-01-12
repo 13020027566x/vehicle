@@ -1,0 +1,29 @@
+{
+  "groups": [
+    {
+      "name": "vehicle.json",
+      "type": "com.finhub.framework.core.json.JsonProperties",
+      "sourceType": "com.finhub.framework.core.json.JsonProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "vehicle.json.front17-compatible",
+      "type": "java.lang.Boolean",
+      "description": "解决前端在长度大于 17 位时会出现精度丢失的问题，默认为 false",
+      "sourceType": "com.finhub.framework.core.json.JsonProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "vehicle.json.serialization-inclusion",
+      "type": "java.lang.String",
+      "description": "设置序列化忽略类型 通过该方法对 mapper 对象进行设置，所有序列化的对象都将按改规则进行系列化 Include.Include.ALWAYS Include.NON_DEFAULT 属性为默认值不序列化 Include.NON_EMPTY 属性为 空（\"\"） 或者为 NULL 都不序列化，则返回的 json 是没有这个字段的。这样对移动端会更省流量 Include.NON_NULL 属性为NULL 不序列化，默认",
+      "sourceType": "com.finhub.framework.core.json.JsonProperties",
+      "defaultValue": "NON_NULL"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

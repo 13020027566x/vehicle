@@ -1,0 +1,6 @@
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-scheduler/src/main/java/com/vehicle/scheduler/task/SchedulerTask.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-scheduler/src/main/java/com/vehicle/scheduler/configuration/SchedulerConfiguration.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-scheduler/src/main/java/com/vehicle/scheduler/quartz/DemoJob01.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-scheduler/src/main/java/com/vehicle/scheduler/xxl/DemoXxlJob.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-scheduler/src/main/java/com/vehicle/scheduler/quartz/DemoJob02.java
+/Users/TaoBangren/gitee/finhub-vehicle/vehicle-scheduler/src/main/java/com/vehicle/scheduler/task/SpringTask.java

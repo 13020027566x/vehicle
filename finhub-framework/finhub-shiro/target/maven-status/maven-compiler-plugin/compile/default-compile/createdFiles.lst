@@ -1,0 +1,9 @@
+com\finhub\framework\shiro\authc\ShiroByteSource$BytesHelper.class
+com\finhub\framework\shiro\authc\ShiroByteSource.class
+com\finhub\framework\shiro\filter\ShiroAjaxSessionFilter.class
+com\finhub\framework\shiro\authc\RetryLimitCredentialsMatcher.class
+com\finhub\framework\shiro\cache\ShiroCache.class
+com\finhub\framework\shiro\cache\ShiroCacheManager.class
+com\finhub\framework\shiro\filter\KickoutSessionControlFilter.class
+com\finhub\framework\shiro\authz\PasswordHash.class
+com\finhub\framework\shiro\configuration\ShiroAutoloadConfiguration.class

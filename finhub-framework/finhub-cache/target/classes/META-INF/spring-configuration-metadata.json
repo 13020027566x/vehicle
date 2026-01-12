@@ -1,0 +1,93 @@
+{
+  "groups": [
+    {
+      "name": "cache",
+      "type": "com.finhub.framework.cache.property.CacheProperties",
+      "sourceType": "com.finhub.framework.cache.property.CacheProperties"
+    },
+    {
+      "name": "redis",
+      "type": "com.finhub.framework.cache.property.RedisProperties",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "cache.manager",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.cache.property.CacheProperties",
+      "defaultValue": "redis"
+    },
+    {
+      "name": "cache.prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.cache.property.CacheProperties"
+    },
+    {
+      "name": "redis.database",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "redis.ip",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties"
+    },
+    {
+      "name": "redis.max-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties",
+      "defaultValue": 10
+    },
+    {
+      "name": "redis.max-total",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties",
+      "defaultValue": 30
+    },
+    {
+      "name": "redis.max-wait-millis",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties",
+      "defaultValue": 5000
+    },
+    {
+      "name": "redis.min-idle",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties",
+      "defaultValue": 1
+    },
+    {
+      "name": "redis.mode",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties"
+    },
+    {
+      "name": "redis.password",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties"
+    },
+    {
+      "name": "redis.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties"
+    },
+    {
+      "name": "redis.test-on-borrow",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "redis.timeout",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.cache.property.RedisProperties",
+      "defaultValue": 5000
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

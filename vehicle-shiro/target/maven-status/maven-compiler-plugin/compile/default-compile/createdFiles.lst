@@ -1,0 +1,5 @@
+com/vehicle/shiro/configuration/ShiroConfiguration.class
+com/vehicle/shiro/controller/LoginController.class
+com/vehicle/shiro/controller/LoginResVO.class
+com/vehicle/shiro/realm/ShiroDbRealm.class
+com/vehicle/shiro/controller/LoginReqVO.class

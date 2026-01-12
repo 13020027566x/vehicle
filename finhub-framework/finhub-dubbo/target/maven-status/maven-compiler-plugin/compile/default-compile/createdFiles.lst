@@ -1,0 +1,10 @@
+com\finhub\framework\dubbo\filter\ProviderRpcTraceFilter.class
+com\finhub\framework\dubbo\skywalking\DubboPluginConfig$Plugin.class
+com\finhub\framework\dubbo\filter\ConsumerRpcTraceFilter.class
+com\finhub\framework\dubbo\skywalking\DubboPluginConfig$Plugin$Dubbo.class
+com\finhub\framework\dubbo\filter\DubboExceptionFilter.class
+com\finhub\framework\dubbo\skywalking\DubboPluginConfig.class
+com\finhub\framework\dubbo\filter\DubboExceptionFilter$ExceptionListener.class
+com\finhub\framework\dubbo\filter\DubboExceptionFilter$DubboExceptionListener.class
+com\finhub\framework\dubbo\filter\AbstractFilter.class
+com\finhub\framework\dubbo\skywalking\DubboPluginUtils.class

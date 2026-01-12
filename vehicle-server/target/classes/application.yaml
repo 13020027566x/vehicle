@@ -1,0 +1,9 @@
+# Spring 配置项
+spring:
+    application:
+        name: vehicle-server
+
+# 默认API接口响应格式不再需要适配（之前是为了兼容分贝通接口做的适配）
+vehicle:
+    adaptive:
+        enabled: false

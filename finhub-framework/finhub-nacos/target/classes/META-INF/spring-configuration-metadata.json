@@ -1,0 +1,71 @@
+{
+  "groups": [
+    {
+      "name": "finhub.nacos",
+      "type": "com.finhub.framework.nacos.property.NacosBootProperties",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties"
+    },
+    {
+      "name": "finhub.nacos.config",
+      "type": "com.finhub.framework.nacos.property.NacosBootProperties$Config",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties"
+    },
+    {
+      "name": "finhub.nacos.config.bootstrap",
+      "type": "com.finhub.framework.nacos.property.NacosBootProperties$Bootstrap",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties$Config"
+    }
+  ],
+  "properties": [
+    {
+      "name": "finhub.nacos.config.auto-refresh",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties$Config",
+      "defaultValue": true
+    },
+    {
+      "name": "finhub.nacos.config.bootstrap.enable",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties$Bootstrap",
+      "defaultValue": true
+    },
+    {
+      "name": "finhub.nacos.config.bootstrap.log-enable",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties$Bootstrap",
+      "defaultValue": true
+    },
+    {
+      "name": "finhub.nacos.config.data-ids",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties$Config"
+    },
+    {
+      "name": "finhub.nacos.config.group",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties$Config",
+      "defaultValue": "DEFAULT_GROUP"
+    },
+    {
+      "name": "finhub.nacos.config.namespace",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties$Config",
+      "defaultValue": ""
+    },
+    {
+      "name": "finhub.nacos.config.server-addr",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties$Config"
+    },
+    {
+      "name": "finhub.nacos.config.type",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.nacos.property.NacosBootProperties$Config",
+      "defaultValue": "YAML"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

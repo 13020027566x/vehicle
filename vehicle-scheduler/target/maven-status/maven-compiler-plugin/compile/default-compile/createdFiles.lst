@@ -1,0 +1,9 @@
+com/vehicle/scheduler/configuration/SchedulerConfiguration.class
+com/vehicle/scheduler/quartz/DemoJob01.class
+com/vehicle/scheduler/task/SpringTask.class
+com/vehicle/scheduler/quartz/DemoJob02$1.class
+com/vehicle/scheduler/configuration/SchedulerConfiguration$DemoJob02Configuration.class
+com/vehicle/scheduler/task/SchedulerTask.class
+com/vehicle/scheduler/configuration/SchedulerConfiguration$DemoJob01Configuration.class
+com/vehicle/scheduler/xxl/DemoXxlJob.class
+com/vehicle/scheduler/quartz/DemoJob02.class

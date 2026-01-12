@@ -1,0 +1,17 @@
+com/vehicle/web/log/controller/LogController.class
+com/vehicle/web/pay/controller/WxMaUserController.class
+com/vehicle/web/organization/controller/OrganizationController.class
+com/vehicle/web/resource/controller/ResourceController.class
+com/vehicle/web/role/controller/RoleController.class
+com/vehicle/web/pay/controller/WxPayController.class
+com/vehicle/web/tradeorder/controller/TradeOrderController.class
+com/vehicle/web/userrole/controller/UserRoleController.class
+com/vehicle/web/roleresource/controller/RoleResourceController.class
+com/vehicle/web/dictionary/controller/DictionaryController.class
+com/vehicle/web/userorg/controller/UserOrgController.class
+com/vehicle/web/fileattach/controller/FileAttachController.class
+com/vehicle/web/WebServer.class
+com/vehicle/web/test/controller/TestController.class
+com/vehicle/web/user/controller/UserController.class
+com/vehicle/web/pay/controller/EntPayController.class
+com/vehicle/web/configuration/WebConfiguration.class

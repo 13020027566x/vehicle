@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "CodeGenMain",
+            "request": "launch",
+            "mainClass": "com.finhub.codegen.CodeGenMain",
+            "projectName": "finhub-code-gen"
+        },
+        {
+            "type": "java",
+            "name": "DbInitMain",
+            "request": "launch",
+            "mainClass": "com.finhub.codegen.DbInitMain",
+            "projectName": "finhub-code-gen"
+        },
+        {
+            "type": "java",
+            "name": "msa-demo-server",
+            "request": "launch",
+            "mainClass": "com.vehicle.server.BootStrap",
+            "projectName": "msa-demo-server"
+        },
+        {
+            "type": "java",
+            "name": "ProjectReactor",
+            "request": "launch",
+            "mainClass": "com.finhub.reactor.vehicle.ProjectReactor",
+            "projectName": "vehicle-reactor"
+        },
+        {
+            "type": "java",
+            "name": "vehicle-server",
+            "request": "launch",
+            "mainClass": "com.vehicle.server.BootStrap",
+            "projectName": "vehicle-server",
+            "vmArgs": [
+                "-Dspring.profiles.active=tx-dev",
+                "-Dspring.application.dept=PINGTAI",
+                "-Dnacos.config.server-addr=vehicle-nacos:8848",
+                "-Dnacos.config.refresh-data-id=vehicle-server",
+                "-Dnacos.config.data-ids=vehicle-server,default_port",
+                "-Dnacos.config.group=DEFAULT_GROUP",
+                "-Dvehicle.log.project=fbt-test-log",
+                "-Dvehicle.log.accessKeyId=LTAI5tMcovXe15Sq9jpYubto",
+                "-Dvehicle.log.accessKeySecret=vipVpFMPv7Dp9LLjfjYuWM5jXNn8Fb",
+                "-Dvehicle.log.endpoint=cn-beijing.log.aliyuncs.com",
+                "-Dlog.appender=STDOUT",
+                "-Dlog.level=INFO",
+                "-Dskywalking.agent.service_name=vehicle-server",
+                "-javaagent:/Users/TaoBangren/opt/apache-skywalking-apm/agent/skywalking-agent.jar"
+            ]
+        }
+    ]
+}

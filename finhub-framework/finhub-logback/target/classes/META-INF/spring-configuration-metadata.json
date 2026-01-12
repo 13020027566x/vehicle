@@ -1,0 +1,155 @@
+{
+  "groups": [
+    {
+      "name": "vehicle.log",
+      "type": "com.finhub.framework.logback.property.LogProperties",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "vehicle.log.access-key-id",
+      "type": "java.lang.String",
+      "description": "日志服务器认证ID",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.access-key-secret",
+      "type": "java.lang.String",
+      "description": "日志服务器认证密钥",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.controller-log-enable",
+      "type": "java.lang.Boolean",
+      "description": "是否开启 controller log 日志，默认为 true",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "vehicle.log.custom-mdc-filed-list",
+      "type": "java.util.List<java.lang.String>",
+      "description": "自定义 MDC 字段配置，根据自身项目进行日志拆分，显示成单独的字段",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.d-e-f-a-u-l-t-e-x-c-l-u-d-e-h-e-a-d-e-r-k-e-y-s",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.datasource-routing-aspect-log-enable",
+      "type": "java.lang.Boolean",
+      "description": "是否开启 datasource routing aspect log 日志，默认为 false",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "vehicle.log.dubbo-consumer-log-enable",
+      "type": "java.lang.Boolean",
+      "description": "是否开启 dubbo consumer log 日志，默认为 true",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "vehicle.log.dubbo-provider-log-enable",
+      "type": "java.lang.Boolean",
+      "description": "是否开启 dubbo provider log 日志，默认为 true",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "vehicle.log.endpoint",
+      "type": "java.lang.String",
+      "description": "日志服务器访问域名",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.exclude-request-header-keys",
+      "type": "java.util.Set<java.lang.String>",
+      "description": "exclude-request-header-keys 排除header中的元素",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.exclude-response-header-keys",
+      "type": "java.util.Set<java.lang.String>",
+      "description": "exclude-response-header-keys 排除header中的元素",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.logger-class-line",
+      "type": "java.lang.Boolean",
+      "description": "日志输出显示行数 默认false，打印行数影响效率",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "vehicle.log.package-prefixes",
+      "type": "java.util.List<java.lang.String>",
+      "description": "指定包路径参数 日志输出json格式",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.profile",
+      "type": "java.lang.String",
+      "description": "当前环境",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.project",
+      "type": "java.lang.String",
+      "description": "远程日志project",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.request-attribution-keys",
+      "type": "java.util.List<java.lang.String>",
+      "description": "requestAttributionKeys，与header相反 默认不输出内容，需要指定要输出的key",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.request-header-keys",
+      "type": "java.util.List<java.lang.String>",
+      "description": "requestHeaderKeys 默认输出所有key，指定后只输出指定key",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.response-header-keys",
+      "type": "java.util.List<java.lang.String>",
+      "description": "responseHeaderKeys 默认输出所有key，指定后只输出指定key",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties"
+    },
+    {
+      "name": "vehicle.log.server-max-length",
+      "type": "java.lang.Integer",
+      "description": "日志内容最大输出长度",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties",
+      "defaultValue": 10000
+    },
+    {
+      "name": "vehicle.log.sky-walking-max-length",
+      "type": "java.lang.Integer",
+      "description": "日志内容最大输出长度",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties",
+      "defaultValue": 500
+    },
+    {
+      "name": "vehicle.log.test",
+      "type": "java.lang.Boolean",
+      "description": "测试使用，默认关闭",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "vehicle.log.truncated-enable",
+      "type": "java.lang.Boolean",
+      "description": "Log 过长是否按 MaxLength 截取，默认为 true",
+      "sourceType": "com.finhub.framework.logback.property.LogProperties",
+      "defaultValue": true
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

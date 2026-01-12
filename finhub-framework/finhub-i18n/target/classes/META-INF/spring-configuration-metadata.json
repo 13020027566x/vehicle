@@ -1,0 +1,86 @@
+{
+  "groups": [
+    {
+      "name": "i18n",
+      "type": "com.finhub.framework.i18n.property.I18nProperties",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties"
+    },
+    {
+      "name": "i18n.i-n-s-t-a-n-c-e",
+      "type": "com.finhub.framework.i18n.property.I18nProperties",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "i18n.base-folder",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": "i18n"
+    },
+    {
+      "name": "i18n.base-name",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": "messages"
+    },
+    {
+      "name": "i18n.cache-seconds",
+      "type": "java.lang.Integer",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": -1
+    },
+    {
+      "name": "i18n.concurrent-refresh",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "i18n.default-encoding",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": "UTF-8"
+    },
+    {
+      "name": "i18n.default-locale",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": "zh_CN"
+    },
+    {
+      "name": "i18n.interceptor-name",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": "lang"
+    },
+    {
+      "name": "i18n.interceptor-patterns",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": "\/**"
+    },
+    {
+      "name": "i18n.interceptor-resolver-type",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": "HEADER"
+    },
+    {
+      "name": "i18n.supported-locales",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": "zh_CN,en_US"
+    },
+    {
+      "name": "i18n.use-code-as-default-message",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.i18n.property.I18nProperties",
+      "defaultValue": true
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "groups": [
+    {
+      "name": "wx.miniapp",
+      "type": "com.finhub.framework.pay.configuration.WxMaProperties",
+      "sourceType": "com.finhub.framework.pay.configuration.WxMaProperties"
+    },
+    {
+      "name": "wx.pay",
+      "type": "com.finhub.framework.pay.configuration.WxPayProperties",
+      "sourceType": "com.finhub.framework.pay.configuration.WxPayProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "wx.miniapp.configs",
+      "type": "java.util.List<com.finhub.framework.pay.configuration.WxMaProperties$Config>",
+      "sourceType": "com.finhub.framework.pay.configuration.WxMaProperties"
+    },
+    {
+      "name": "wx.pay.app-id",
+      "type": "java.lang.String",
+      "description": "设置微信公众号或者小程序等的appid",
+      "sourceType": "com.finhub.framework.pay.configuration.WxPayProperties"
+    },
+    {
+      "name": "wx.pay.key-path",
+      "type": "java.lang.String",
+      "description": "apiclient_cert.p12文件的绝对路径，或者如果放在项目中，请以classpath:开头指定",
+      "sourceType": "com.finhub.framework.pay.configuration.WxPayProperties"
+    },
+    {
+      "name": "wx.pay.mch-id",
+      "type": "java.lang.String",
+      "description": "微信支付商户号",
+      "sourceType": "com.finhub.framework.pay.configuration.WxPayProperties"
+    },
+    {
+      "name": "wx.pay.mch-key",
+      "type": "java.lang.String",
+      "description": "微信支付商户密钥",
+      "sourceType": "com.finhub.framework.pay.configuration.WxPayProperties"
+    },
+    {
+      "name": "wx.pay.sub-app-id",
+      "type": "java.lang.String",
+      "description": "服务商模式下的子商户公众账号ID，普通模式请不要配置，请在配置文件中将对应项删除",
+      "sourceType": "com.finhub.framework.pay.configuration.WxPayProperties"
+    },
+    {
+      "name": "wx.pay.sub-mch-id",
+      "type": "java.lang.String",
+      "description": "服务商模式下的子商户号，普通模式请不要配置，最好是请在配置文件中将对应项删除",
+      "sourceType": "com.finhub.framework.pay.configuration.WxPayProperties"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

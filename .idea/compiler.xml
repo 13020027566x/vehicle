@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="finhub-swift" />
+        <module name="finhub-dubbo" />
+        <module name="finhub-mongo" />
+        <module name="finhub-sentinel" />
+        <module name="finhub-agent" />
+        <module name="finhub-lucene" />
+        <module name="vehicle-shiro" />
+        <module name="finhub-web" />
+        <module name="finhub-common" />
+        <module name="finhub-swagger-inner" />
+        <module name="vehicle-service" />
+        <module name="finhub-exception" />
+        <module name="finhub-mybatis" />
+        <module name="finhub-safety" />
+        <module name="finhub-cache" />
+        <module name="vehicle-maven-plugin" />
+        <module name="finhub-shiro" />
+        <module name="vehicle-reactor" />
+        <module name="finhub-elasticsearch" />
+        <module name="finhub-pay" />
+        <module name="msa-demo-server" />
+        <module name="finhub-validator" />
+        <module name="msa-demo-provider" />
+        <module name="finhub-task" />
+        <module name="finhub-quartz" />
+        <module name="msa-demo-client" />
+        <module name="finhub-swagger" />
+        <module name="finhub-xxl-job" />
+        <module name="finhub-nacos" />
+        <module name="vehicle-web" />
+        <module name="yapidoc-maven-plugin" />
+        <module name="vehicle-dao" />
+        <module name="finhub-rocketmq" />
+        <module name="msa-demo-api" />
+        <module name="vehicle-scheduler" />
+        <module name="finhub-kafka" />
+        <module name="finhub-i18n" />
+        <module name="finhub-logback" />
+        <module name="finhub-core" />
+        <module name="vehicle-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="18">
+      <module name="finhub-code-gen" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="finhub-agent" options="" />
+      <module name="finhub-cache" options="" />
+      <module name="finhub-code-gen" options="" />
+      <module name="finhub-common" options="" />
+      <module name="finhub-core" options="" />
+      <module name="finhub-dubbo" options="" />
+      <module name="finhub-elasticsearch" options="" />
+      <module name="finhub-exception" options="" />
+      <module name="finhub-framework" options="" />
+      <module name="finhub-i18n" options="" />
+      <module name="finhub-kafka" options="" />
+      <module name="finhub-logback" options="" />
+      <module name="finhub-lucene" options="" />
+      <module name="finhub-mongo" options="" />
+      <module name="finhub-mybatis" options="" />
+      <module name="finhub-nacos" options="" />
+      <module name="finhub-parent" options="" />
+      <module name="finhub-pay" options="" />
+      <module name="finhub-quartz" options="" />
+      <module name="finhub-rocketmq" options="" />
+      <module name="finhub-safety" options="" />
+      <module name="finhub-sentinel" options="" />
+      <module name="finhub-shiro" options="" />
+      <module name="finhub-swagger" options="" />
+      <module name="finhub-swagger-inner" options="" />
+      <module name="finhub-swift" options="" />
+      <module name="finhub-task" options="" />
+      <module name="finhub-validator" options="" />
+      <module name="finhub-web" options="" />
+      <module name="finhub-xxl-job" options="" />
+      <module name="msa-demo-api" options="" />
+      <module name="msa-demo-client" options="" />
+      <module name="msa-demo-provider" options="" />
+      <module name="msa-demo-server" options="" />
+      <module name="vehicle" options="" />
+      <module name="vehicle-dao" options="" />
+      <module name="vehicle-maven-plugin" options="" />
+      <module name="vehicle-msa" options="" />
+      <module name="vehicle-reactor" options="" />
+      <module name="vehicle-scheduler" options="" />
+      <module name="vehicle-server" options="" />
+      <module name="vehicle-service" options="" />
+      <module name="vehicle-shiro" options="" />
+      <module name="vehicle-web" options="" />
+      <module name="yapidoc-maven-plugin" options="" />
+    </option>
+  </component>
+</project>

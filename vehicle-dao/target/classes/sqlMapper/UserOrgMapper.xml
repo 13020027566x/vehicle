@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vehicle.dao.userorg.UserOrgDAO">
+    <resultMap id="UserOrgResultMap" type="com.vehicle.dao.userorg.po.UserOrgPO">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="user_code" property="userCode" jdbcType="VARCHAR"/>
+        <result column="org_id" property="orgId" jdbcType="VARCHAR"/>
+        <result column="org_name" property="orgName" jdbcType="VARCHAR"/>
+        <result column="org_code" property="orgCode" jdbcType="VARCHAR"/>
+        <result column="create_at" property="createAt" jdbcType="BIGINT"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="create_by" property="createBy" jdbcType="VARCHAR"/>
+        <result column="create_name" property="createName" jdbcType="VARCHAR"/>
+        <result column="update_at" property="updateAt" jdbcType="BIGINT"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="update_by" property="updateBy" jdbcType="VARCHAR"/>
+        <result column="update_name" property="updateName" jdbcType="VARCHAR"/>
+        <result column="is_del" property="isDel" jdbcType="TINYINT"/>
+        <result column="is_test" property="isTest" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="select_column_list">SELECT `id`,`user_id`,`user_name`,`user_code`,`org_id`,`org_name`,`org_code`,`create_at`,`create_by`,`create_name`,`update_at`,`update_by`,`update_name`,`is_del`,`is_test`</sql>
+    <sql id="select_not_del">AND is_del = 0</sql>
+    <sql id="order_by_sql">ORDER BY id DESC</sql>
+    <sql id="insert_into_sql">INSERT INTO `su_user_org` (`id`,`user_id`,`user_name`,`user_code`,`org_id`,`org_name`,`org_code`,`create_at`,`create_by`,`create_name`,`update_at`,`update_by`,`update_name`,`is_del`,`is_test`)</sql>
+    <sql id="delete_from_sql">UPDATE `su_user_org`</sql>
+    <sql id="update_table_sql">UPDATE `su_user_org`</sql>
+    <sql id="select_count_sql">SELECT COUNT(1) FROM `su_user_org`</sql>
+    <sql id="from_sql">FROM `su_user_org`</sql>
+    <sql id="insert_table_sql">INSERT INTO `su_user_org`</sql>
+    <sql id="limit_1_sql">LIMIT 1</sql>
+
+    <insert id="insertBatchAllColumn" parameterType="java.util.List" useGeneratedKeys="true" keyProperty="id">
+        <include refid="insert_into_sql"/>
+        <trim prefix="VALUES" suffixOverrides=",">
+            <if test="list != null">
+                <foreach collection="list" item="item" index="index" separator=",">
+                    <trim prefix="(" suffix=")" suffixOverrides=",">
+                        #{item.id,jdbcType=VARCHAR},
+                        #{item.userId,jdbcType=VARCHAR},
+                        #{item.userName,jdbcType=VARCHAR},
+                        #{item.userCode,jdbcType=VARCHAR},
+                        #{item.orgId,jdbcType=VARCHAR},
+                        #{item.orgName,jdbcType=VARCHAR},
+                        #{item.orgCode,jdbcType=VARCHAR},
+                        #{item.createAt,jdbcType=BIGINT},
+                        #{item.createBy,jdbcType=VARCHAR},
+                        #{item.createName,jdbcType=VARCHAR},
+                        #{item.updateAt,jdbcType=BIGINT},
+                        #{item.updateBy,jdbcType=VARCHAR},
+                        #{item.updateName,jdbcType=VARCHAR},
+                        #{item.isDel,jdbcType=TINYINT},
+                        #{item.isTest,jdbcType=TINYINT},
+                    </trim>
+                </foreach>
+            </if>
+        </trim>
+    </insert>
+</mapper>

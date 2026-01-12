@@ -1,0 +1,21 @@
+{
+  "groups": [
+    {
+      "name": "vehicle.swift",
+      "type": "com.finhub.framework.swift.property.SwiftProperties",
+      "sourceType": "com.finhub.framework.swift.property.SwiftProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "vehicle.swift.decode-parameter",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.swift.property.SwiftProperties",
+      "defaultValue": false
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

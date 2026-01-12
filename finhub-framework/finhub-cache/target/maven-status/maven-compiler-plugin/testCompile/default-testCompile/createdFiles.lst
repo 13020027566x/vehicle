@@ -1,0 +1,6 @@
+com\finhub\framework\cache\cachemanager\configuration\CacheConfiguration.class
+com\finhub\framework\cache\cachemanager\service\impl\CacheServiceTestImpl.class
+com\finhub\framework\cache\cachemanager\service\CacheServiceTest.class
+com\finhub\framework\cache\cachemanager\RedisCacheManagerTest.class
+com\finhub\framework\cache\CacheApplicationTest.class
+com\finhub\framework\cache\cachemanager\service\CacheServiceTest$Test.class

@@ -1,0 +1,211 @@
+{
+  "groups": [
+    {
+      "name": "spring",
+      "type": "com.finhub.framework.web.boot.WebBootProperties",
+      "sourceType": "com.finhub.framework.web.boot.WebBootProperties"
+    },
+    {
+      "name": "spring.mvc",
+      "type": "com.finhub.framework.web.boot.WebBootProperties$Mvc",
+      "sourceType": "com.finhub.framework.web.boot.WebBootProperties"
+    },
+    {
+      "name": "spring.web",
+      "type": "com.finhub.framework.web.boot.WebBootProperties$Web",
+      "sourceType": "com.finhub.framework.web.boot.WebBootProperties"
+    },
+    {
+      "name": "spring.web.resources",
+      "type": "com.finhub.framework.web.boot.WebBootProperties$Resources",
+      "sourceType": "com.finhub.framework.web.boot.WebBootProperties$Web"
+    },
+    {
+      "name": "vehicle.filter",
+      "type": "com.finhub.framework.web.property.FilterProperties",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties"
+    },
+    {
+      "name": "vehicle.response",
+      "type": "com.finhub.framework.web.property.ResponseProperties",
+      "sourceType": "com.finhub.framework.web.property.ResponseProperties"
+    },
+    {
+      "name": "vehicle.web.async",
+      "type": "com.finhub.framework.web.property.AsyncProperties",
+      "sourceType": "com.finhub.framework.web.property.AsyncProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.mvc.throw-exception-if-no-handler-found",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.web.boot.WebBootProperties$Mvc"
+    },
+    {
+      "name": "spring.web.resources.add-mappings",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.web.boot.WebBootProperties$Resources"
+    },
+    {
+      "name": "vehicle.filter.filter-rulers",
+      "type": "java.util.List<com.finhub.framework.web.property.FilterProperties$FilterRuler>",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties"
+    },
+    {
+      "name": "vehicle.filter.ignore-headers",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties"
+    },
+    {
+      "name": "vehicle.filter.ignore-parameters",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties"
+    },
+    {
+      "name": "vehicle.filter.sql-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "vehicle.filter.sql-exclude-urls",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties"
+    },
+    {
+      "name": "vehicle.filter.sql-include-urls",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties"
+    },
+    {
+      "name": "vehicle.filter.swift-sql-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "vehicle.filter.swift-xss-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "vehicle.filter.xss-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "vehicle.filter.xss-exclude-urls",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties"
+    },
+    {
+      "name": "vehicle.filter.xss-include-urls",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.finhub.framework.web.property.FilterProperties"
+    },
+    {
+      "name": "vehicle.response.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否启用 ResponseProperties 配置，默认为 false",
+      "sourceType": "com.finhub.framework.web.property.ResponseProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "vehicle.response.fail-code",
+      "type": "java.lang.Integer",
+      "description": "响应码",
+      "sourceType": "com.finhub.framework.web.property.ResponseProperties"
+    },
+    {
+      "name": "vehicle.response.fail-msg",
+      "type": "java.lang.String",
+      "description": "提示信息",
+      "sourceType": "com.finhub.framework.web.property.ResponseProperties"
+    },
+    {
+      "name": "vehicle.response.fill-data-object-enable",
+      "type": "java.lang.Boolean",
+      "description": "响应结构体中 data 是否填充数据对象，默认不填充",
+      "sourceType": "com.finhub.framework.web.property.ResponseProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "vehicle.response.success-code",
+      "type": "java.lang.Integer",
+      "description": "响应码",
+      "sourceType": "com.finhub.framework.web.property.ResponseProperties"
+    },
+    {
+      "name": "vehicle.response.success-count",
+      "type": "java.lang.Integer",
+      "description": "总条数",
+      "sourceType": "com.finhub.framework.web.property.ResponseProperties"
+    },
+    {
+      "name": "vehicle.response.success-msg",
+      "type": "java.lang.String",
+      "description": "提示信息",
+      "sourceType": "com.finhub.framework.web.property.ResponseProperties"
+    },
+    {
+      "name": "vehicle.response.success-title",
+      "type": "java.lang.String",
+      "description": "App 弹框提示标题",
+      "sourceType": "com.finhub.framework.web.property.ResponseProperties"
+    },
+    {
+      "name": "vehicle.response.success-type",
+      "type": "java.lang.Integer",
+      "description": "错误类型",
+      "sourceType": "com.finhub.framework.web.property.ResponseProperties"
+    },
+    {
+      "name": "vehicle.web.async.core-pool-size",
+      "type": "java.lang.Integer",
+      "description": "核心线程数",
+      "sourceType": "com.finhub.framework.web.property.AsyncProperties",
+      "defaultValue": 10
+    },
+    {
+      "name": "vehicle.web.async.keep-alive-time",
+      "type": "java.lang.Long",
+      "description": "回收时间",
+      "sourceType": "com.finhub.framework.web.property.AsyncProperties",
+      "defaultValue": 30
+    },
+    {
+      "name": "vehicle.web.async.maximum-pool-size",
+      "type": "java.lang.Integer",
+      "description": "最大线程数",
+      "sourceType": "com.finhub.framework.web.property.AsyncProperties",
+      "defaultValue": 20
+    },
+    {
+      "name": "vehicle.web.async.queue-capacity",
+      "type": "java.lang.Integer",
+      "description": "队列容量",
+      "sourceType": "com.finhub.framework.web.property.AsyncProperties",
+      "defaultValue": 1000
+    },
+    {
+      "name": "vehicle.web.async.thread-name-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.finhub.framework.web.property.AsyncProperties",
+      "defaultValue": "vehicle-http-sync-"
+    },
+    {
+      "name": "vehicle.web.async.unit",
+      "type": "java.util.concurrent.TimeUnit",
+      "description": "回收时间类型",
+      "sourceType": "com.finhub.framework.web.property.AsyncProperties",
+      "defaultValue": "seconds"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

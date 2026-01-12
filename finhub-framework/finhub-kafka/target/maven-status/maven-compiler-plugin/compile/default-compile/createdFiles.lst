@@ -1,0 +1,6 @@
+com\finhub\framework\kafka\producer\KafkaProducerPublisher.class
+com\finhub\framework\kafka\producer\KafkaCallbackAdapter.class
+com\finhub\framework\kafka\configuration\KafkaConsumerAutoloadConfiguration.class
+com\finhub\framework\kafka\message\Message.class
+com\finhub\framework\kafka\annotation\KafkaMessageHeader.class
+com\finhub\framework\kafka\configuration\KafkaProducerAutoloadConfiguration.class

@@ -1,0 +1,8 @@
+com\finhub\framework\common\CommonApplicationTest.class
+com\finhub\framework\common\lock\DistributeLockTest.class
+com\finhub\framework\common\config\RedisConfiguration.class
+com\finhub\framework\common\config\CommonConfiguration.class
+com\finhub\framework\common\lock\service\RedisServiceTestImpl$InnerRedisServiceTest$InnerRedisServiceTestBuilder.class
+com\finhub\framework\common\lock\service\RedisServiceTest.class
+com\finhub\framework\common\lock\service\RedisServiceTestImpl$InnerRedisServiceTest.class
+com\finhub\framework\common\lock\service\RedisServiceTestImpl.class

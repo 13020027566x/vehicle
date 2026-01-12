@@ -1,0 +1,5 @@
+com\finhub\framework\pay\configuration\WxMaProperties$Config.class
+com\finhub\framework\pay\configuration\WxMaProperties.class
+com\finhub\framework\pay\configuration\PayAutoloadConfiguration.class
+META-INF\spring-configuration-metadata.json
+com\finhub\framework\pay\configuration\WxPayProperties.class

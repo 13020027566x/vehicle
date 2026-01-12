@@ -1,0 +1,8 @@
+# Spring 配置项
+spring:
+    application:
+        name: msa-demo-server
+
+vehicle:
+    mybatis:
+        enabled: false
